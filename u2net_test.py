@@ -18,8 +18,8 @@ from ACGPN.U2Net.data_loader import ToTensor
 from ACGPN.U2Net.data_loader import ToTensorLab
 from ACGPN.U2Net.data_loader import SalObjDataset
 
-from model import U2NET # full size version 173.6 MB
-from model import U2NETP # small version u2net 4.7 MB
+from ACGPN.U2Net.model import U2NET # full size version 173.6 MB
+from ACGPN.U2Net.model import U2NETP # small version u2net 4.7 MB
 
 # normalize the predicted SOD probability map
 def normPRED(d):
