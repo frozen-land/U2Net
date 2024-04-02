@@ -15,10 +15,10 @@ from PIL import Image
 import glob
 import warnings
 
-from data_loader import RescaleT
-from data_loader import ToTensor
-from data_loader import ToTensorLab
-from data_loader import SalObjDataset
+from ACGPN.U2Net.data_loader import RescaleT
+from ACGPN.U2Net.data_loader import ToTensor
+from ACGPN.U2Net.data_loader import ToTensorLab
+from ACGPN.U2Net.data_loader import SalObjDataset
 
 warnings.filterwarnings("ignore")
 
