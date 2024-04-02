@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms#, utils
-from ACGPN.U2Net.u2net_test import normPRED
+from u2net_test import normPRED
 # import torch.optim as optim
 
 import numpy as np
@@ -15,10 +15,13 @@ from PIL import Image
 import glob
 import warnings
 
-from ACGPN.U2Net.data_loader import RescaleT
-from ACGPN.U2Net.data_loader import ToTensor
-from ACGPN.U2Net.data_loader import ToTensorLab
-from ACGPN.U2Net.data_loader import SalObjDataset
+from data_loader import RescaleT
+from data_loader import ToTensor
+from data_loader import ToTensorLab
+from data_loader import SalObjDataset
+
+import u2net_load2
+import sys
 
 warnings.filterwarnings("ignore")
 
@@ -89,3 +92,7 @@ def infer(
         save_images(img_name_list[i_test],pred,prediction_dir)
 
         del d1,d2,d3,d4,d5,d6,d7
+
+if __name__ == "__main__":
+    u2net = u2net_load2.model(model_name='u2netp')
+    infer(u2net, sys.argv[1], sys.argv[2])
