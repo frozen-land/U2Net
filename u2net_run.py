@@ -94,5 +94,8 @@ def infer(
         del d1,d2,d3,d4,d5,d6,d7
 
 if __name__ == "__main__":
-    u2net = u2net_load2.model(model_name='u2netp')
+    if torch.cuda.is_available():
+        u2net = u2net_load2.model(model_name='u2netp')
+    else:
+        u2net = u2net_load2.model(model_name='u2netp', map_location=torch.device('cpu'))
     infer(u2net, sys.argv[1], sys.argv[2])
