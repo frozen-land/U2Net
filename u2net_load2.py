@@ -19,7 +19,7 @@ def model(model_name='u2net'):
     if torch.cuda.is_available():
         net.load_state_dict(torch.load(model_dir))
     else:
-        net.load_state_dict(torch.load(model_dir), map_location=torch.device('cpu'))
+        net.load_state_dict(torch.load(model_dir, map_location=torch.device('cpu')))
 
     if torch.cuda.is_available():
         net.cuda()
